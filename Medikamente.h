@@ -3,6 +3,7 @@
 
 class Medikament
 {
+	friend class Repository;
 	std::string name;
 	int konzentration;
 	int menge;
