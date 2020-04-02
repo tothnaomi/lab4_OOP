@@ -27,12 +27,21 @@
     <ClCompile Include="Kontroller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Medikamente.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Repository.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

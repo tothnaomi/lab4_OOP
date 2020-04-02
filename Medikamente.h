@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class Medikation
+class Medikament
 {
 	std::string name;
 	int konzentration;
@@ -9,7 +9,9 @@ class Medikation
 	double preis;
 public:
 	/* constructor for the class */
-	Medikation(std::string name, int konzentration, int menge, double preis);
+	Medikament(std::string name, int konzentration, int menge, double preis);
+
+	bool is_knapp_oder_nicht(int menge);
 
 	/* getters */
 	std::string get_name();
@@ -23,4 +25,11 @@ public:
 	/* setter */
 
 	void set_preis(double neues_preis);
+
+	void set_menge(int menge);
+
+	void set_konzentration(int konzentration);
+
+	void set_name(std::string name);
+
 };

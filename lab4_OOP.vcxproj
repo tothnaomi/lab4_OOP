@@ -142,10 +142,13 @@
     <ClCompile Include="Kontroller.cpp" />
     <ClCompile Include="Medikamente.cpp" />
     <ClCompile Include="Repository.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Kontroller.h" />
     <ClInclude Include="Medikamente.h" />
     <ClInclude Include="Repository.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

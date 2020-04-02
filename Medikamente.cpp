@@ -1,7 +1,7 @@
 #include "Medikamente.h"
 #include <string>
 
-Medikation::Medikation(std::string name, int konzentration, int menge, double preis)
+Medikament::Medikament(std::string name, int konzentration, int menge, double preis)
 {
 	this->name = name;
 	this->konzentration = konzentration;
@@ -9,27 +9,42 @@ Medikation::Medikation(std::string name, int konzentration, int menge, double pr
 	this->preis = preis;
 }
 
-std::string Medikation::get_name()
+std::string Medikament::get_name()
 {
 	return this->name;
 }
 
-int Medikation::get_konzentration()
+int Medikament::get_konzentration()
 {
 	return this->konzentration;
 }
 
-int Medikation::get_menge()
+int Medikament::get_menge()
 {
 	return this->menge;
 }
 
-double Medikation::get_preis()
+double Medikament::get_preis()
 {
 	return this->preis;
 }
 
-void Medikation::set_preis(double neues_preis)
+void Medikament::set_preis(double neues_preis)
 {
 	this->preis = neues_preis;
+}
+
+void Medikament::set_konzentration(int konzentration)
+{
+	this->konzentration = konzentration;
+}
+
+void Medikament::set_menge(int menge)
+{
+	this->menge = menge;
+}
+
+void Medikament::set_name(std::string name)
+{
+	this->name = name;
 }
