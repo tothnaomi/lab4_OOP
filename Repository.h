@@ -14,4 +14,5 @@ public:
 
 	bool in_list(std::string name, int konzentration);
 
+	std::vector<Medikament> Medikamente_die_eine_zeichenkette_enthalten(std::string zeichenkette);
 };

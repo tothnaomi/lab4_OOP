@@ -18,27 +18,23 @@ bool Medikament::zeichenkette_in_name(std::string zeichenkette)
 {
 	char* str = &zeichenkette[0];
 	char* name_ptr = &(this->name[0]);
-	
-		// const because I can only read from the string, I can not modify it 
-		// search for the first matching character
-		while (*name_ptr != '\0')
+	while (*name_ptr != '\0')
+	{
+		if (*name_ptr == *str)
+			break;
+		else
+			name_ptr++;
+	}
+	name_ptr++; str++;
+	while (*str != '\0' || *name_ptr != '\0')
+	{
+		if (*name_ptr != *str) return false;
+		else
 		{
-			if (*name_ptr == *str)
-				break;
-			else
-				name_ptr++;
+			name_ptr++; str++;
 		}
-		// s and ptr points to the first matching character 
-		name_ptr++; str++;
-		while (*str != '\0' || *name_ptr != '\0')
-		{
-			if (*name_ptr != *str) return false;
-			else
-			{
-				name_ptr++; str++;
-			}
-		}
-		return true;
+	}
+	return true;
 }
 
 std::string Medikament::get_name()

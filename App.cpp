@@ -4,6 +4,14 @@
 #include "Kontroller.h"
 #include "UI.h"
 
+void print(std::vector<Medikament> v)
+{
+	for (auto el : v)
+	{
+		std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
+	}
+}
+
 int main()
 {
 	Repository repo = Repository();
@@ -12,7 +20,7 @@ int main()
 
 	while (true)
 	{
-		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4:" << std::endl;
+		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name" << std::endl;
 		int option;
 		std::cin >> option;
 		if (option == 1)
@@ -34,6 +42,7 @@ int main()
 			{
 				std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
 			}*/
+			// print((*kontroller.repo).medikamenten);
 		}
 		else if (option == 2)
 		{
