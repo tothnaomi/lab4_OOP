@@ -51,3 +51,83 @@ void Kontroller::loschen_Medikament(std::string name, int konzentration)
 		throw the_medication_is_not_in_the_repository;
 	}
 }
+
+void Kontroller::bearbeiten_Medikament_name(std::string name, int konzentration, std::string new_name)
+{
+	if ((*this->repo).in_list(name, konzentration))
+	{
+		for (int i=0;i<(*this->repo).medikamenten.size();i++)
+		{
+			if ((*this->repo).medikamenten[i].get_name()==name && (*this->repo).medikamenten[i].get_konzentration()==konzentration)
+			{
+				(*this->repo).medikamenten[i].set_name(new_name);
+				break;
+			}
+		}
+	}
+	else
+	{
+		std::exception the_medication_is_not_in_the_repository;
+		throw the_medication_is_not_in_the_repository;
+	}
+}
+
+void Kontroller::bearbeiten_Medikament_konzentration(std::string name, int konzentration, int neue_konzentration)
+{
+	if ((*this->repo).in_list(name, konzentration))
+	{
+		for (int i = 0; i < (*this->repo).medikamenten.size(); i++)
+		{
+			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
+			{
+				(*this->repo).medikamenten[i].set_konzentration(neue_konzentration);
+				break;
+			}
+		}
+	}
+	else
+	{
+		std::exception the_medication_is_not_in_the_repository;
+		throw the_medication_is_not_in_the_repository;
+	}
+}
+
+void Kontroller::bearbeiten_Medikament_menge(std::string name, int konzentration, int new_menge)
+{
+	if ((*this->repo).in_list(name, konzentration))
+	{
+		for (int i = 0; i < (*this->repo).medikamenten.size(); i++)
+		{
+			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
+			{
+				(*this->repo).medikamenten[i].set_menge(new_menge);
+				break;
+			}
+		}
+	}
+	else
+	{
+		std::exception the_medication_is_not_in_the_repository;
+		throw the_medication_is_not_in_the_repository;
+	}
+}
+
+void Kontroller::bearbeiten_Medikament_preis(std::string name, int konzentration, double neues_preis)
+{
+	if ((*this->repo).in_list(name, konzentration))
+	{
+		for (int i = 0; i < (*this->repo).medikamenten.size(); i++)
+		{
+			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
+			{
+				(*this->repo).medikamenten[i].set_preis(neues_preis);
+				break;
+			}
+		}
+	}
+	else
+	{
+		std::exception the_medication_is_not_in_the_repository;
+		throw the_medication_is_not_in_the_repository;
+	}
+}

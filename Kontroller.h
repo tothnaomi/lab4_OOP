@@ -5,7 +5,6 @@ class Kontroller
 {
 	friend class Apotheke;
 	
-
 public:
 	Repository* repo;
 	void set_repo(Repository* repo);

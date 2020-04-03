@@ -12,6 +12,10 @@ public:
 	/* constructor for the class */
 	Medikament(std::string name, int konzentration, int menge, double preis);
 
+	bool operator< (const Medikament& other);
+
+	bool zeichenkette_in_name(std::string zeichenkette);
+
 	/* getters */
 	std::string get_name();
 

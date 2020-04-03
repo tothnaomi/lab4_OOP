@@ -9,6 +9,38 @@ Medikament::Medikament(std::string name, int konzentration, int menge, double pr
 	this->preis = preis;
 }
 
+bool Medikament::operator< (const Medikament& other)
+{
+	return this->name < other.name;
+}
+
+bool Medikament::zeichenkette_in_name(std::string zeichenkette)
+{
+	char* str = &zeichenkette[0];
+	char* name_ptr = &(this->name[0]);
+	
+		// const because I can only read from the string, I can not modify it 
+		// search for the first matching character
+		while (*name_ptr != '\0')
+		{
+			if (*name_ptr == *str)
+				break;
+			else
+				name_ptr++;
+		}
+		// s and ptr points to the first matching character 
+		name_ptr++; str++;
+		while (*str != '\0' || *name_ptr != '\0')
+		{
+			if (*name_ptr != *str) return false;
+			else
+			{
+				name_ptr++; str++;
+			}
+		}
+		return true;
+}
+
 std::string Medikament::get_name()
 {
 	return this->name;
