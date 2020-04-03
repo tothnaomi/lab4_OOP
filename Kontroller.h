@@ -3,11 +3,14 @@
 
 class Kontroller
 {
-	Repository repo;
+	friend class Apotheke;
+	
 
 public:
+	Repository* repo;
+	void set_repo(Repository* repo);
 
-	void add_Medikament(std::string name, int konzentration, double preis);
+	void add_Medikament(std::string name, int konzentartion, int menge, double preis);
 
 	void loschen_Medikament(std::string name, int konzentration);
 

@@ -12,8 +12,6 @@ public:
 	/* constructor for the class */
 	Medikament(std::string name, int konzentration, int menge, double preis);
 
-	bool is_knapp_oder_nicht(int menge);
-
 	/* getters */
 	std::string get_name();
 

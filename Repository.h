@@ -7,18 +7,18 @@
 
 class Repository
 {
-	std::vector <Medikament> apotheke;
-	/* this attribute will store the last instruction for the redo and undo. Every instruction has a number. */
-	int last_instruction = 0; 
+	friend class Kontroller;
+	
+	/* this attribute will store the last instruction for the redo and undo. Every instruction has a number. 
+	1) loschen
+	2) hinzufugen
+	3) bearbeiten */
 
 public:
+	std::vector <Medikament> medikamenten;
 
 	bool in_list(std::string name, int konzentration);
 
-	Medikament find_medikament(std::string name, int konzentration);
-
-	std::vector <Medikament> string_in_name(std::string zeichenkette);
-	
-	std::vector<Medikament> knappe_Medikamente(int menge);
+	void loschen_Medikament(std::string name, int konzentration);
 
 };
