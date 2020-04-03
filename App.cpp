@@ -18,7 +18,7 @@ int main()
 	Kontroller kontroller = Kontroller();
 	kontroller.set_repo(&repo);
 
-	while (true)
+	/*while (true)
 	{
 		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name" << std::endl;
 		int option;
@@ -43,7 +43,7 @@ int main()
 				std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
 			}*/
 			// print((*kontroller.repo).medikamenten);
-		}
+		/*}
 		else if (option == 2)
 		{
 			std::cout << "Name:";
@@ -57,7 +57,7 @@ int main()
 			{
 				std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
 			}*/
-		}
+		/*}
 		else if (option == 3)
 		{
 			int option2;
@@ -117,10 +117,23 @@ int main()
 			else
 				break;
 		}
+		else if (option == 4)
+		{
+			std::string str;
+			std::cout << "String:";
+			std::cin >> str;
+			std::vector<Medikament> v = repo.Medikamente_die_eine_zeichenkette_enthalten(str);
+			print(v);
+		}
 		else
 			break;
 
 	}
+	*/
+	
+std::string str = "pir";
+Medikament med1 = Medikament("aspirin", 10, 15, 22.18);
+std::cout << med1.zeichenkette_in_name(str);
 	
 	return 0;
 }
