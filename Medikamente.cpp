@@ -1,5 +1,7 @@
 #include "Medikamente.h"
 #include <string>
+#include <iostream>
+#include <algorithm>
 
 Medikament::Medikament(std::string name, int konzentration, int menge, double preis)
 {
@@ -16,25 +18,10 @@ bool Medikament::operator< (const Medikament& other)
 
 bool Medikament::zeichenkette_in_name(std::string zeichenkette)
 {
-	char* str = &zeichenkette[0];
-	char* name_ptr = &(this->name[0]);
-	while (*name_ptr != '\0')
-	{
-		if (*name_ptr == *str)
-			break;
-		else
-			name_ptr++;
-	}
-	name_ptr++; str++;
-	while (*str != '\0' || *name_ptr != '\0')
-	{
-		if (*name_ptr != *str) return false;
-		else
-		{
-			name_ptr++; str++;
-		}
-	}
-	return true;
+	bool in_name = false;
+	if (strstr(this->name.c_str(), zeichenkette.c_str()))
+		in_name = true;
+	return in_name;
 }
 
 std::string Medikament::get_name()

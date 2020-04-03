@@ -3,6 +3,7 @@
 #include "Medikamente.h"
 #include "Kontroller.h"
 #include "UI.h"
+#include "Button.h"
 
 void print(std::vector<Medikament> v)
 {
@@ -16,11 +17,13 @@ int main()
 {
 	Repository repo = Repository();
 	Kontroller kontroller = Kontroller();
-	kontroller.set_repo(&repo);
+	Button button;
+	kontroller.set_repo(&repo, &button);
+	Apotheke smile = Apotheke(&kontroller);
 
-	/*while (true)
+	while (true)
 	{
-		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name" << std::endl;
+		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo" << std::endl;
 		int option;
 		std::cin >> option;
 		if (option == 1)
@@ -37,13 +40,13 @@ int main()
 			std::cout << "Price:";
 			double preis;
 			std::cin >> preis;
-			kontroller.add_Medikament(name, konzentration, menge, preis);
+			smile.get_kontroller()->add_Medikament(name, konzentration, menge, preis);
 			/*for (auto el : (*kontroller.repo).medikamenten)
 			{
 				std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
 			}*/
-			// print((*kontroller.repo).medikamenten);
-		/*}
+			print((*smile.get_kontroller()->get_repo()).medikamenten);
+		}
 		else if (option == 2)
 		{
 			std::cout << "Name:";
@@ -52,12 +55,13 @@ int main()
 			std::cout << "Concentration:";
 			int konzentration;
 			std::cin >> konzentration;
-			kontroller.loschen_Medikament(name, konzentration);
+			smile.get_kontroller()->loschen_Medikament(name, konzentration);
 			/*for (auto el : (*kontroller.repo).medikamenten)
 			{
 				std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
 			}*/
-		/*}
+			print((*smile.get_kontroller()->get_repo()).medikamenten);
+		}
 		else if (option == 3)
 		{
 			int option2;
@@ -75,44 +79,32 @@ int main()
 				std::string new_name;
 				std::cout << "New name:";
 				std::cin >> new_name;
-				kontroller.bearbeiten_Medikament_name(name, konzentration, new_name);
-				for (auto el : (*kontroller.repo).medikamenten)
-				{
-					std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
-				}
+				smile.get_kontroller()->bearbeiten_Medikament_name(name, konzentration, new_name);
+				print((*smile.get_kontroller()->get_repo()).medikamenten);
 			}
 			else if (option2 == 2)
 			{
 				int konz;
 				std::cout << "New concentration:";
 				std::cin >> konz;
-				kontroller.bearbeiten_Medikament_konzentration(name, konzentration, konz);
-				for (auto el : (*kontroller.repo).medikamenten)
-				{
-					std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
-				}
+				smile.get_kontroller()->bearbeiten_Medikament_konzentration(name, konzentration, konz);
+				print((*smile.get_kontroller()->get_repo()).medikamenten);
 			}
 			else if (option2 == 3)
 			{
 				int menge;
 				std::cout << "New quantity:";
 				std::cin >> menge;
-				kontroller.bearbeiten_Medikament_menge(name, konzentration, menge);
-				for (auto el : (*kontroller.repo).medikamenten)
-				{
-					std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
-				}
+				smile.get_kontroller()->bearbeiten_Medikament_menge(name, konzentration, menge);
+				print((*smile.get_kontroller()->get_repo()).medikamenten);
 			}
 			else if (option2 == 4)
 			{
 				double new_price;
 				std::cout << "New price:";
 				std::cin >> new_price;
-				kontroller.bearbeiten_Medikament_preis(name, konzentration, new_price);
-				for (auto el : (*kontroller.repo).medikamenten)
-				{
-					std::cout << el.get_name() << " " << el.get_konzentration() << " " << el.get_menge() << " " << el.get_preis() << std::endl;
-				}
+				smile.get_kontroller()->bearbeiten_Medikament_preis(name, konzentration, new_price);
+				print((*smile.get_kontroller()->get_repo()).medikamenten);
 			}
 			else
 				break;
@@ -122,18 +114,16 @@ int main()
 			std::string str;
 			std::cout << "String:";
 			std::cin >> str;
-			std::vector<Medikament> v = repo.Medikamente_die_eine_zeichenkette_enthalten(str);
+			std::vector<Medikament> v = smile.get_kontroller()->get_repo()->Medikamente_die_eine_zeichenkette_enthalten(str);
 			print(v);
+		}
+		else if (option == 5)
+		{
+			smile.redo_button();
 		}
 		else
 			break;
 
 	}
-	*/
-	
-std::string str = "pir";
-Medikament med1 = Medikament("aspirin", 10, 15, 22.18);
-std::cout << med1.zeichenkette_in_name(str);
-	
 	return 0;
 }

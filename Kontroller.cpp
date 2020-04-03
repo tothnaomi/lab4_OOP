@@ -1,9 +1,10 @@
 #include "Kontroller.h"
 #include <iostream>
 
-void Kontroller::set_repo(Repository* repo)
+void Kontroller::set_repo(Repository* repo, Button* b)
 {
 	this->repo = repo;
+	this->button = b;
 }
 
 void Kontroller::add_Medikament(std::string name, int konzentration, int menge, double preis)
@@ -23,12 +24,12 @@ void Kontroller::add_Medikament(std::string name, int konzentration, int menge, 
 			}
 		}
 	}
-
 	else
 	{
 		Medikament new_med = Medikament(name, konzentration, menge, preis);
 		(*this->repo).medikamenten.push_back(new_med);
 	}
+	this->button->set("add", name, konzentration, "" , -1, menge, preis);
 }
 
 void Kontroller::loschen_Medikament(std::string name, int konzentration)
@@ -50,6 +51,7 @@ void Kontroller::loschen_Medikament(std::string name, int konzentration)
 		std::exception the_medication_is_not_in_the_repository;
 		throw the_medication_is_not_in_the_repository;
 	}
+	this->button->set("delete", name, konzentration, "", -1, -1, -1);
 }
 
 void Kontroller::bearbeiten_Medikament_name(std::string name, int konzentration, std::string new_name)
@@ -61,6 +63,7 @@ void Kontroller::bearbeiten_Medikament_name(std::string name, int konzentration,
 			if ((*this->repo).medikamenten[i].get_name()==name && (*this->repo).medikamenten[i].get_konzentration()==konzentration)
 			{
 				(*this->repo).medikamenten[i].set_name(new_name);
+				this->button->set("new name", name, konzentration, new_name, -1, -1, -1);
 				break;
 			}
 		}
@@ -81,6 +84,7 @@ void Kontroller::bearbeiten_Medikament_konzentration(std::string name, int konze
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
 				(*this->repo).medikamenten[i].set_konzentration(neue_konzentration);
+				this->button->set("new concentration", name, konzentration, "", neue_konzentration, -1, -1);
 				break;
 			}
 		}
@@ -101,6 +105,7 @@ void Kontroller::bearbeiten_Medikament_menge(std::string name, int konzentration
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
 				(*this->repo).medikamenten[i].set_menge(new_menge);
+				this->button->set("new menge", name, konzentration, "", -1, new_menge, -1);
 				break;
 			}
 		}
@@ -121,6 +126,7 @@ void Kontroller::bearbeiten_Medikament_preis(std::string name, int konzentration
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
 				(*this->repo).medikamenten[i].set_preis(neues_preis);
+				this->button->set("new price", name, konzentration, "", -1, -1, neues_preis);
 				break;
 			}
 		}

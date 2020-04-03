@@ -1,13 +1,18 @@
 #pragma once
 #include "Repository.h"
+#include "Button.h"
 
 class Kontroller
 {
 	friend class Apotheke;
-	
-public:
+	friend class Redo;
 	Repository* repo;
-	void set_repo(Repository* repo);
+
+	Button* button;
+
+public:
+	
+	void set_repo(Repository* repo, Button* b);
 
 	void add_Medikament(std::string name, int konzentartion, int menge, double preis);
 
@@ -20,4 +25,6 @@ public:
 	void bearbeiten_Medikament_menge(std::string name, int konzentration, int new_menge);
 
 	void bearbeiten_Medikament_preis(std::string name, int konzentration, double neues_preis);
+
+	Repository* get_repo() { return this->repo; }
 };

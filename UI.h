@@ -3,11 +3,13 @@
 
 class Apotheke 
 {
-	Kontroller kontroller;
+	Kontroller* kontroller;
 
 public:
 
-	Apotheke(Kontroller kont);
+	Apotheke(Kontroller* kont);
 
-	void set_kontroller(Kontroller kont) { this->kontroller = kont; }
+	Kontroller* get_kontroller() { return this->kontroller; }
+
+	void redo_button();
 };
