@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Kontroller.cpp" />
     <ClCompile Include="Medikamente.cpp" />
     <ClCompile Include="Repository.cpp" />

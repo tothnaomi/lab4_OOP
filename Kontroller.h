@@ -5,9 +5,8 @@
 class Kontroller
 {
 	friend class Apotheke;
-	friend class Redo;
+	friend class Button;
 	Repository* repo;
-
 	Button* button;
 
 public:

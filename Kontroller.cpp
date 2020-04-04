@@ -41,6 +41,7 @@ void Kontroller::loschen_Medikament(std::string name, int konzentration)
 		{
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
+				this->button->set("delete", name, konzentration, "", -1, (*this->repo).medikamenten[i].get_menge(), (*this->repo).medikamenten[i].get_preis());
 				(*this->repo).medikamenten.erase((*this->repo).medikamenten.begin() + i);
 				break;
 			}
@@ -51,7 +52,6 @@ void Kontroller::loschen_Medikament(std::string name, int konzentration)
 		std::exception the_medication_is_not_in_the_repository;
 		throw the_medication_is_not_in_the_repository;
 	}
-	this->button->set("delete", name, konzentration, "", -1, -1, -1);
 }
 
 void Kontroller::bearbeiten_Medikament_name(std::string name, int konzentration, std::string new_name)

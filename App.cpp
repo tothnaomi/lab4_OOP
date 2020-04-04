@@ -18,12 +18,13 @@ int main()
 	Repository repo = Repository();
 	Kontroller kontroller = Kontroller();
 	Button button;
+	button.set_kontroller(&kontroller);
 	kontroller.set_repo(&repo, &button);
-	Apotheke smile = Apotheke(&kontroller);
+	Apotheke smile = Apotheke(&kontroller, &button);
 
 	while (true)
 	{
-		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo" << std::endl;
+		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo, 6:undo" << std::endl;
 		int option;
 		std::cin >> option;
 		if (option == 1)
@@ -119,7 +120,11 @@ int main()
 		}
 		else if (option == 5)
 		{
-			smile.redo_button();
+			button.redo();
+		}
+		else if (option == 6)
+		{
+			button.undo();
 		}
 		else
 			break;

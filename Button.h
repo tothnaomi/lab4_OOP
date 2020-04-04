@@ -1,11 +1,10 @@
 #pragma once
 #include <string>
+#include "Kontroller.h"
 
 class Button
 {
-	friend class Medikament;
-	friend class Repository;
-	friend class Kontroller;
+	Kontroller* kontroller;
 
 public:
 	std::string last_function;
@@ -16,15 +15,13 @@ public:
 	double new_price;
 	int new_concentration;
 
-	void set(std::string str, std::string name, int konzentration, std::string new_name, int new_concentration, int new_menge, double new_price)
-	{
-		this->last_function = str;
-		this->new_name = new_name;
-		this->new_concentration = new_concentration;
-		this->new_menge = new_menge;
-		this->new_price = new_price;
+	void set_kontroller(Kontroller* kont);
+	
+	Kontroller* get_kontroller();
 
-		this->name = name;
-		this->konzentration = konzentration;
-	}
+	void set(std::string, std::string, int, std::string, int, int, double);
+
+	void redo();
+
+	void undo();
 };

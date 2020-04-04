@@ -4,12 +4,11 @@
 class Apotheke 
 {
 	Kontroller* kontroller;
+	Button* button;
 
 public:
 
-	Apotheke(Kontroller* kont);
+	Apotheke(Kontroller* kont, Button* button);
 
 	Kontroller* get_kontroller() { return this->kontroller; }
-
-	void redo_button();
 };
