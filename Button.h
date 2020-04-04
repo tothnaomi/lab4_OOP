@@ -10,6 +10,8 @@ public:
 	std::string last_function;
 	std::string name;
 	int konzentration;
+	int menge;
+	double price;
 	std::string new_name;
 	int new_menge;
 	double new_price;
@@ -19,7 +21,7 @@ public:
 	
 	Kontroller* get_kontroller();
 
-	void set(std::string, std::string, int, std::string, int, int, double);
+	void set(std::string, std::string, int,int ,double, std::string, int, int, double);
 
 	void redo();
 

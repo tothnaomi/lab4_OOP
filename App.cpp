@@ -121,10 +121,12 @@ int main()
 		else if (option == 5)
 		{
 			button.redo();
+			print((*smile.get_kontroller()->get_repo()).medikamenten);
 		}
 		else if (option == 6)
 		{
 			button.undo();
+			print((*smile.get_kontroller()->get_repo()).medikamenten);
 		}
 		else
 			break;

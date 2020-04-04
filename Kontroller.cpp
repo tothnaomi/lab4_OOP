@@ -29,7 +29,7 @@ void Kontroller::add_Medikament(std::string name, int konzentration, int menge, 
 		Medikament new_med = Medikament(name, konzentration, menge, preis);
 		(*this->repo).medikamenten.push_back(new_med);
 	}
-	this->button->set("add", name, konzentration, "" , -1, menge, preis);
+	this->button->set("add", name, konzentration, menge, preis, "" , -1, menge, preis);
 }
 
 void Kontroller::loschen_Medikament(std::string name, int konzentration)
@@ -41,7 +41,7 @@ void Kontroller::loschen_Medikament(std::string name, int konzentration)
 		{
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
-				this->button->set("delete", name, konzentration, "", -1, (*this->repo).medikamenten[i].get_menge(), (*this->repo).medikamenten[i].get_preis());
+				this->button->set("delete", name, konzentration, (*this->repo).medikamenten[i].get_menge(), (*this->repo).medikamenten[i].get_preis(),  "", -1,-1, -1);
 				(*this->repo).medikamenten.erase((*this->repo).medikamenten.begin() + i);
 				break;
 			}
@@ -63,7 +63,7 @@ void Kontroller::bearbeiten_Medikament_name(std::string name, int konzentration,
 			if ((*this->repo).medikamenten[i].get_name()==name && (*this->repo).medikamenten[i].get_konzentration()==konzentration)
 			{
 				(*this->repo).medikamenten[i].set_name(new_name);
-				this->button->set("new name", name, konzentration, new_name, -1, -1, -1);
+				this->button->set("new name", name, konzentration, -1, -1,new_name, -1, -1, -1);
 				break;
 			}
 		}
@@ -84,7 +84,7 @@ void Kontroller::bearbeiten_Medikament_konzentration(std::string name, int konze
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
 				(*this->repo).medikamenten[i].set_konzentration(neue_konzentration);
-				this->button->set("new concentration", name, konzentration, "", neue_konzentration, -1, -1);
+				this->button->set("new concentration", name, konzentration,-1, -1,  "", neue_konzentration, -1, -1);
 				break;
 			}
 		}
@@ -104,8 +104,8 @@ void Kontroller::bearbeiten_Medikament_menge(std::string name, int konzentration
 		{
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
+				this->button->set("new menge", name, konzentration, (*this->repo).medikamenten[i].get_menge(), -1, "", -1, new_menge, -1);
 				(*this->repo).medikamenten[i].set_menge(new_menge);
-				this->button->set("new menge", name, konzentration, "", -1, new_menge, -1);
 				break;
 			}
 		}
@@ -125,8 +125,8 @@ void Kontroller::bearbeiten_Medikament_preis(std::string name, int konzentration
 		{
 			if ((*this->repo).medikamenten[i].get_name() == name && (*this->repo).medikamenten[i].get_konzentration() == konzentration)
 			{
+				this->button->set("new price", name, konzentration,-1, (*this->repo).medikamenten[i].get_preis(), "", -1, -1, neues_preis);
 				(*this->repo).medikamenten[i].set_preis(neues_preis);
-				this->button->set("new price", name, konzentration, "", -1, -1, neues_preis);
 				break;
 			}
 		}
