@@ -1,6 +1,8 @@
 #include "Repository.h"
 #include <exception>
 
+/* here are all the functions which are returning an object from the repotory, but they do not change the list with the medications */
+
 bool Repository::in_list(std::string name, int konzentration)
 {
 	bool in_liste = false;

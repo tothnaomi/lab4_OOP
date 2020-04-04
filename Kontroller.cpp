@@ -1,6 +1,8 @@
 #include "Kontroller.h"
 #include <iostream>
 
+/* here are all the functions which are changign something in the list of medications (in our case this is the repository) */
+
 void Kontroller::set_repo(Repository* repo, Button* b)
 {
 	this->repo = repo;

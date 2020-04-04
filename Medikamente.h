@@ -14,6 +14,7 @@ public:
 
 	bool operator< (const Medikament& other);
 
+	/* this function returns true, if the string "zeichenkette" is in the objects name and false if it is not. */
 	bool zeichenkette_in_name(std::string zeichenkette);
 
 	/* getters */
