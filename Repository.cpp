@@ -1,6 +1,8 @@
 #include "Repository.h"
 #include <exception>
 
+/* NOTE TO MYSELF: CRUD -> create, read, update, delete */
+
 /* here are all the functions which are returning an object from the repotory, but they do not change the list with the medications */
 
 bool Repository::in_list(std::string name, int konzentration)
