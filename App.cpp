@@ -25,7 +25,7 @@ int main()
 
 	while (true)
 	{
-		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo, 6:undo, 7:check medicaments that has less than x amounts, 8:check medicaments with y price" << std::endl;
+		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo, 6:undo, 7:check medicaments that have less than x amounts, 8:check medicaments with y price" << std::endl;
 		int option;
 		std::cin >> option;
 		if (option == 1)
