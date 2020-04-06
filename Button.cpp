@@ -55,6 +55,7 @@ void Button::undo()
 	{
 		this->kontroller->bearbeiten_Medikament_menge(this->name, this->konzentration, this->menge);
 	}
+	
 	else if (this->last_function == "new price")
 	{
 		this->kontroller->bearbeiten_Medikament_preis(this->name, this->new_price, this->price);

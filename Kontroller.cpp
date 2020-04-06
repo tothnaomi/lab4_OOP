@@ -56,6 +56,7 @@ void Kontroller::loschen_Medikament(std::string name, int konzentration)
 	}
 }
 
+
 void Kontroller::bearbeiten_Medikament_name(std::string name, int konzentration, std::string new_name)
 {
 	if ((*this->repo).in_list(name, konzentration))
@@ -118,6 +119,7 @@ void Kontroller::bearbeiten_Medikament_menge(std::string name, int konzentration
 		throw the_medication_is_not_in_the_repository;
 	}
 }
+
 
 void Kontroller::bearbeiten_Medikament_preis(std::string name, int konzentration, double neues_preis)
 {

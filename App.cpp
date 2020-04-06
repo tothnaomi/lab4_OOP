@@ -25,7 +25,7 @@ int main()
 
 	while (true)
 	{
-		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo, 6:undo" << std::endl;
+		std::cout << "What do you want to do? 1: add, 2: delete, 3: changing something, 4: string in name, 5:redo, 6:undo, 7:check medicaments that has less than x amounts, 8:check medicaments with y price" << std::endl;
 		int option;
 		std::cin >> option;
 		if (option == 1)
@@ -119,6 +119,26 @@ int main()
 			std::vector<Medikament> v = smile.get_kontroller()->get_repo()->Medikamente_die_eine_zeichenkette_enthalten(str);
 			print(v);
 		}
+		else if (option == 7)
+		{
+			int x;
+			
+			std::cout << "What is the minimum amount of a medicament before it's considered scarce?";
+			std::cin >> x;
+			std::vector<Medikament> w = smile.get_kontroller()->get_repo()->Medikamente_die_knapp_sind(x);
+			print(w);
+			
+		}
+		else if (option == 8)
+		{
+		int y;
+		
+		std::cout << "What is the price of the medications you want to check?";
+		std::cin >> y;
+		std::vector<Medikament> u = smile.get_kontroller()->get_repo()->Medikamente_mit_gleiche_preis(y);
+		print(u);
+
+		}
 		else if (option == 5)
 		{
 			button.redo();
@@ -129,8 +149,8 @@ int main()
 			button.undo();
 			print((*smile.get_kontroller()->get_repo()).medikamenten);
 		}
-		else
 			break;
+		
 
 	}
 	return 0;
