@@ -50,7 +50,7 @@ std::vector<Medikament> Repository::Medikamente_die_knapp_sind(int x)
 {
 
 	std::vector<Medikament> medikamente_mit_menge_kleiner_als_x;
-	for (int i = 0; i<this->medikamenten.size(); i++)
+	for (int i = 0; i < this->medikamenten.size(); i++)
 		if (this->medikamenten[i].get_menge() <= x)
 		{
 			medikamente_mit_menge_kleiner_als_x.push_back(this->medikamenten[i]);
@@ -59,7 +59,7 @@ std::vector<Medikament> Repository::Medikamente_die_knapp_sind(int x)
 	return medikamente_mit_menge_kleiner_als_x;
 }
 
-std::vector<Medikament> Repository::Medikamente_mit_gleiche_preis(int y)
+std::vector<Medikament> Repository::Medikamente_mit_gleiche_preis(double y)
 {
 	std::vector<Medikament> medikamente_mit_gleiche_preis;
 	for(int i= 0; i <this->medikamenten.size(); i++)

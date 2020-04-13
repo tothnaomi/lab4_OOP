@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  MedikamenteTest.cpp
+C:\Users\deea_\source\repos\lab4_OOPTest\MedikamenteTest.cpp(3,10): fatal error C1083: Cannot open include file: 'CppUnitTest.h': No such file or directory
+  RepositoryTest.cpp
+C:\Users\deea_\source\repos\lab4_OOPTest\RepositoryTest.cpp(3,10): fatal error C1083: Cannot open include file: 'CppUnitTest.h': No such file or directory
+  Generating Code...

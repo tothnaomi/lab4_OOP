@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <exception>
 
 Medikament::Medikament(std::string name, int konzentration, int menge, double preis)
 {

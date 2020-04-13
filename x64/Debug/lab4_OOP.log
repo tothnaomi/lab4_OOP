@@ -1,0 +1,13 @@
+﻿  App.cpp
+C:\Users\deea_\source\repos\lab4_OOP2\Repository.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Button.cpp
+C:\Users\deea_\source\repos\lab4_OOP2\Repository.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\deea_\source\repos\lab4_OOP2\Button.cpp(61,65): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Kontroller.cpp
+C:\Users\deea_\source\repos\lab4_OOP2\Repository.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Repository.cpp
+C:\Users\deea_\source\repos\lab4_OOP2\Repository.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  UI.cpp
+C:\Users\deea_\source\repos\lab4_OOP2\Repository.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+  lab4_OOP.vcxproj -> C:\Users\deea_\source\repos\lab4_OOP2\x64\Debug\lab4_OOP.exe

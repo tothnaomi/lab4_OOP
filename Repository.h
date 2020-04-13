@@ -23,7 +23,7 @@ public:
 
 	/*returns all the medicaments whose menge is smaller than x*/
 	std::vector<Medikament> Medikamente_die_knapp_sind(int x);
-	
-	/* returns all the medicaments with a certain price */
-	std::vector<Medikament> Medikamente_mit_gleiche_preis(int y);
+
+	/* returns all the medicaments with a certain preis */
+	std::vector<Medikament> Medikamente_mit_gleiche_preis(double y);
 };

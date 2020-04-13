@@ -149,6 +149,7 @@
     <ClInclude Include="Kontroller.h" />
     <ClInclude Include="Medikamente.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
